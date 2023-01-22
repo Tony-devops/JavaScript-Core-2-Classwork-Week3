@@ -30,7 +30,10 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
-
+let myAlert = document.querySelector("#alertBtn");
+myAlert.addEventListener('click', ()=>{
+alert('Dont do this again and again')
+})
 
 /*
 Task 3
@@ -39,6 +42,12 @@ Task 3
 When a user clicks the 'Change colour' button, the background colour of the page should change to red.
 Hint: can you do this with a CSS class instead of adding styles to the element?
 */
+let myButton = document.querySelector("#bgrChangeBtn");
+let myBody = document.querySelector('body');
+myButton.addEventListener('click', ()=>{
+myBody.style.backgroundColor = 'red'
+})
+
 
 
 /*
@@ -47,7 +56,11 @@ Task 4
 
 When a user clicks the 'Larger links!' button, the text of all links on the page should increase.
 */
-
+let myFont = document.querySelector('#largerLinksBtn');
+const aTags = document.querySelectorAll('a')
+aTags.forEach((aTags) =>{
+  aTags.style.fontSize = '1.5rem'
+})
 
 /*
 Task 5
@@ -56,3 +69,11 @@ Task 5
 When a user clicks the 'Add some text' button, the text in the input field should be appended to the page as a new paragraph below it.
 Hint: the new paragraph should be appended to the element with id 'addArticle'.
 */
+let myInput =document.querySelector('#addArticleBtn')
+myInput.addEventListener('click', ()=>{
+let newPara = document.createElement('div');
+let text = document.querySelector('#addArticleInput').value;
+newPara.innerText = text;
+let addArticle = document.querySelector('#addArticle');
+addArticle.appendChild(newPara);
+})
